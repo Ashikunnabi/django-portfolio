@@ -1,0 +1,47 @@
+{% extends 'portfolio_app/base.html' %}
+{% load static %}
+
+    <!-- Title of the page -->
+    {% block title %}
+        <title>{{ title }}</title>
+    {% endblock %}    
+
+    <!-- Custom styles for this template -->
+    {% block customcss %} 
+        <link href="{% static '/portfolio_app/css/contact.css' %}" rel="stylesheet">        
+    {% endblock %}
+    
+    {% block content %}  
+    <div class="containers">  
+      <form id="contact" action="{% url 'contact' %}" method="post">
+      {% csrf_token %}
+        <h3>{{ form_title }}</h3>
+        <h4>{{ form_sub_title }}</h4>
+        <fieldset>
+          <input placeholder="Your name" type="text" tabindex="1" required="" name="name">
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Email Address" type="email" tabindex="2" required="" name="email">
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" name="phone">
+        </fieldset>
+        <fieldset>
+          <input placeholder="Your Web Site (optional)" type="url" tabindex="4" name="website">
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="Type your message here...." tabindex="5" required="" name="message"></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" style="background:{{ button_color }};">{{ button_text }}</button>
+        </fieldset>
+      </form>
+    </div    
+    {% endblock %}
+    
+    
+    
+    
+    
+    
+    

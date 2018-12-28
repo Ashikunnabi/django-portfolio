@@ -1,0 +1,80 @@
+{% extends 'portfolio_app/base.html' %}
+{% load static %}
+
+    <!-- Title of the page -->
+    {% block title %}
+        <title>{{ title }}</title>
+    {% endblock %}    
+
+    <!-- Custom styles for this template -->
+    {% block customcss %} 
+        <link href="{% static '/portfolio_app/css/portfolio-item.css' %}" rel="stylesheet">
+        <link href="{% static '/portfolio_app/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">        
+    {% endblock %}
+    
+    {% block content %}    
+        <!-- Page Content -->
+        <div class="container">
+
+          <!-- Portfolio Item Heading -->
+          <h1 class="my-4">{{ project_name }}
+            <small>{{ project_sub_name }}</small>
+          </h1>
+
+          <!-- Portfolio Item Row -->
+          <div class="row">
+
+            <div class="col-md-8">
+              <img class="img-fluid" src="/media/{{ project_details.media }}" alt="">
+              {{ project_details.site_link_icon|safe }} <a href="{{ project_details.site_link }}" target="_blank">{{ project_details.site_name }}</a>
+              
+            </div>
+
+            <div class="col-md-4">
+              <h3 class="my-3">Description</h3>
+              <p>{{ project_details.description }}</p>
+              <h3 class="my-3">Requirments</h3>
+              {{ project_details.requirments|linenumbers|linebreaksbr  }}
+              
+            </div>
+
+          </div>
+          <!-- /.row -->
+
+          <!-- Related Projects Row -->
+          <h3 class="my-4">Related Projects</h3>
+
+          <div class="row">
+            
+            {% if no_related_project %}
+                <h5 class="my-6" style="margin: 0 auto;color: darkgrey;">{{ no_related_project }}</h5>
+            {% endif %}
+            <div class="col-md-3 col-sm-6 mb-4">
+              <a href="{{ related_project_1.id }}">
+                <img class="img-fluid" src="/media/{{ related_project_1.media }}" alt="">
+              </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+              <a href="{{ related_project_2.id }}">
+                <img class="img-fluid" src="/media/{{ related_project_2.media }}" alt="">
+              </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+              <a href="{{ related_project_3.id }}">
+                <img class="img-fluid" src="/media/{{ related_project_3.media }}" alt="">
+              </a>
+            </div>
+
+            <div class="col-md-3 col-sm-6 mb-4">
+              <a href="{{ related_project_4.id }}">
+                <img class="img-fluid" src="/media/{{ related_project_4.media }}" alt="">
+              </a>
+            </div>
+          </div>
+          <!-- /.row -->
+
+        </div>        
+    {% endblock %}
+    <!-- /.container -->

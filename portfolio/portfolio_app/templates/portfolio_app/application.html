@@ -1,0 +1,33 @@
+{% extends 'portfolio_app/base.html' %}
+{% load static %}
+
+    <!-- Title of the page -->
+    {% block title %}
+        <title>{{ title }}</title>
+    {% endblock %}    
+
+    <!-- Custom styles for this template -->
+    {% block customcss %} 
+    <link href="{% static '/portfolio_app/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static '/portfolio_app/css/about.min.css' %}" rel="stylesheet">
+    {% endblock %}
+    
+    {% block content %}
+
+    <div class="social-icons">
+      <ul class="list-unstyled text-center mb-0">
+        {% for application in applications %}
+            <li class="list-unstyled-item">
+                <a href="/media/{{ application.file }} "target="_blank"
+                        style="background-color:{{ application.icon_color }};"
+                        onMouseOver="this.style.backgroundColor='{{ application.icon_hover_color }}'" 
+                        onMouseOut="this.style.backgroundColor='{{ application.icon_color }}'" title="{{ application.name }}">
+                    {{ application.icon|safe }}
+                </a>
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endblock %}

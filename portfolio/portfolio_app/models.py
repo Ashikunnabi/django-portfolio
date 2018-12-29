@@ -13,9 +13,9 @@ class Index(models.Model):
     background_media                = models.FileField(default="bg.mp4", null=True)
     media_position_top              = models.CharField(max_length=10, default="50%")
     media_position_left             = models.CharField(max_length=10, default="50%")
-    footer                          = models.CharField(max_length=10, default="Copyright &copy; ashikunnabi.pythonanywhere.com | 2018")
-    user_status                     = models.CharField(max_length=8, default="Inactive")
-    
+    footer                          = models.CharField(max_length=100, default="Copyright &copy; ashikunnabi.pythonanywhere.com | 2018")
+    USER_STATUS_CHOICE              =(('Active', 'Active'),('Inactive', 'Inactive')) 
+    user_status                     = models.CharField(max_length=8, choices=USER_STATUS_CHOICE, default="Inactive")
     
     class Meta:
         verbose_name = "Index page"

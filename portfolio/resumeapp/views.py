@@ -15,7 +15,6 @@ def index(request):
 	
     context = {
         'resume'               : resume, 
-        'footer'               : person_detail.footer,
         'nav_active_about'     : 'active',
         'experience'           : experience, 
         'education'            : education, 

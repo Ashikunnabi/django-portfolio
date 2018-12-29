@@ -3,7 +3,7 @@
 
     <!-- Title of the page -->
     {% block title %}
-        <title>{{ title }}</title>
+        <title>{{ person_detail.title }}</title>
     {% endblock %}    
 
     <!-- Custom styles for this template -->
@@ -11,7 +11,7 @@
     <link href="{% static '/portfolio_app/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="{% static '/portfolio_app/css/about.min.css' %}" rel="stylesheet">
+    <link href="{% static '/portfolio_app/css/application.min.css' %}" rel="stylesheet">
     {% endblock %}
     
     {% block content %}

@@ -3,7 +3,7 @@
 
     <!-- Title of the page -->
     {% block title %}
-        <title>{{ title }}</title>
+        <title>{{ person_detail.title }}</title>
     {% endblock %}    
 
     <!-- Custom styles for this template -->
@@ -14,12 +14,8 @@
         {% block content %}
         <!-- Page Content -->
         <div class="container">
-
           <!-- Page Heading -->
-          <h1 class="my-4">Projects
-            <small>I Have Done</small>
-          </h1>
-
+          <h1 class="my-4">Projects<small>I Have Done</small></h1>
           <div class="row">
             {% for project in projects %}
             <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -102,7 +98,7 @@
                 </a>
               {% endif %}
             </li>
-            <li class="page-item">
+            <!-- <li class="page-item">
               <a class="page-link" href="#">1</a>
             </li>
             <li class="page-item">
@@ -110,7 +106,7 @@
             </li>
             <li class="page-item">
               <a class="page-link" href="#">3</a>
-            </li>
+            </li> -->
             <li class="page-item">
             {% if projects.has_next %}
               <a class="page-link" href="?page={{ projects.next_page_number }}" aria-label="Next">

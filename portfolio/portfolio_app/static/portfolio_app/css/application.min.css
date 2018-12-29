@@ -1,0 +1,11 @@
+/*!
+ * Start Bootstrap - Coming Soon v5.0.1 (https://startbootstrap.com/template-overviews/coming-soon)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
+ */
+ .social-icons{margin: 300px 0px;}
+ .social-icons ul{margin-top:2rem;width:100%;text-align:center}
+ .social-icons ul>li{margin-left:1rem;margin-right:1rem;display:inline-block}
+ .social-icons ul>li>a{display:block;color:#fff;border-radius:100%;font-size:5rem;line-height:10rem;height:10rem;width:10rem}
+ @media (min-width:768px){.social-icons ul{width: 160px;margin: 0 auto;}.social-icons ul>li{display:block;margin-left:0;margin-right:0;margin-bottom:1rem}.social-icons ul>li:last-child{margin-bottom:0}.social-icons ul>li>a{-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out;font-size:5rem;line-height:10rem;height:10rem;width:10rem}
+ 

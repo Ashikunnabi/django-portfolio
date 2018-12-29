@@ -3,7 +3,7 @@
 
     <!-- Title of the page -->
     {% block title %}
-        <title>{{ title }}</title>
+        <title>{{ person_detail.title }}</title>
     {% endblock %}    
 
     <!-- Custom styles for this template -->
@@ -15,8 +15,8 @@
     <div class="containers">  
       <form id="contact" action="{% url 'contact' %}" method="post">
       {% csrf_token %}
-        <h3>{{ form_title }}</h3>
-        <h4>{{ form_sub_title }}</h4>
+        <h3>{{ contact_page.title }}</h3>
+        <h4>{{ contact_page.sub_title }}</h4>
         <fieldset>
           <input placeholder="Your name" type="text" tabindex="1" required="" name="name">
         </fieldset>
@@ -33,7 +33,7 @@
           <textarea placeholder="Type your message here...." tabindex="5" required="" name="message"></textarea>
         </fieldset>
         <fieldset>
-          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" style="background:{{ button_color }};">{{ button_text }}</button>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" style="background:{{ contact_page.button_color }};">{{ contact_page.button_text }}</button>
         </fieldset>
       </form>
     </div    

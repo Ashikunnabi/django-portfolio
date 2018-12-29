@@ -5,7 +5,6 @@
     {% block title %}
         <title> {{ person_detail.title }}</title>
     {% endblock %}  
-
     <!-- Custom fonts for this template -->
     {% block customcss %} 
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -13,13 +12,11 @@
         <link href="{% static 'resumeapp/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
         <link href="{% static 'resumeapp/vendor/devicons/css/devicons.min.css' %}" rel="stylesheet">
         <link href="{% static 'resumeapp/vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet">
-
         <!-- Custom styles for this template -->
         <link href="{% static 'resumeapp/css/resume.min.css' %}" rel="stylesheet">
     {% endblock %}
     {% block content %} 
       <div id="page-top">
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="sideNav">
           <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">About</span>
@@ -53,9 +50,7 @@
             </ul>
           </div>
         </nav>
-
         <div class="container-fluid p-0">
-
           <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
             <div class="my-auto">
               <h1 class="mb-0">{{ resume.first_name }}
@@ -74,11 +69,9 @@
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                         </span>
-                      </a>
-                
+                      </a>                
                     </li>
-                {% endif %}
-                
+                {% endif %}                
                 {% if resume.twitter_link == null %}
                 {% else %}
                 <li class="list-inline-item">
@@ -89,8 +82,7 @@
                     </span>
                   </a>
                 </li>
-                {% endif %}
-                
+                {% endif %}                
                 {% if resume.linkedin_link == null %}
                 {% else %}
                 <li class="list-inline-item">
@@ -101,8 +93,7 @@
                     </span>
                   </a>
                 </li>
-                {% endif %}
-                
+                {% endif %}                
                 {% if resume.github_link == null %}
                 {% else %}
                 <li class="list-inline-item">
@@ -117,7 +108,6 @@
               </ul>
             </div>
           </section>
-
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
             <div class="my-auto">
               <h2 class="mb-5">Experience</h2>
@@ -134,9 +124,7 @@
                   </div>
                 {% endfor %}        
             </div>
-
           </section>
-
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
             <div class="my-auto">
               <h2 class="mb-5">Education</h2>
@@ -155,11 +143,9 @@
                 {% endfor %} 
             </div>
           </section>
-
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
             <div class="my-auto">
               <h2 class="mb-5">Skills</h2>
-
               <div class="subheading mb-3">Programming Languages &amp; Tools</div>
               <ul class="list-inline list-icons">
                 {% for icon in programming_languages %}
@@ -168,7 +154,6 @@
                   </li>
                 {% endfor %}
               </ul>
-
               <div class="subheading mb-3">Workflow</div>
               <ul class="fa-ul mb-0">
                 {% for workflow in workflows%}
@@ -180,14 +165,12 @@
               </ul>
             </div>
           </section>
-
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
             <div class="my-auto">
               <h2 class="mb-5">Interests</h2>
               <p>{{ resume.interests }}</p>
             </div>
           </section>
-
           <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
             <div class="my-auto">
               <h2 class="mb-5">Awards &amp; Certifications</h2>
@@ -201,18 +184,10 @@
               </ul>
             </div>
           </section>
-
         </div>
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="{% static 'resumeapp/vendor/jquery/jquery.min.js' %}"></script>
-        <script src="{% static 'resumeapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
         <!-- Plugin JavaScript -->
         <script src="{% static 'resumeapp/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
         <!-- Custom scripts for this template -->
         <script src="{% static 'resumeapp/js/resume.min.js' %}"></script>
-
       </div>   
     {% endblock %}

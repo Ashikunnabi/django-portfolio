@@ -58,8 +58,7 @@ class Application(models.Model):
     file          = models.FileField()
     
     def __str__(self):
-        return (self.name +" - "+ self.user.name)  
-        
+        return (self.name +" - "+ self.user.name)          
 
         
 class Contact(models.Model):
@@ -67,9 +66,7 @@ class Contact(models.Model):
     title                 = models.CharField(max_length=100)
     sub_title             = models.CharField(max_length=100)
     button_text           = models.CharField(max_length=100, blank=True)
-    button_color          = models.CharField(max_length=500, blank=True)
-    
-    
+    button_color          = models.CharField(max_length=500, blank=True)      
     
     class Meta:
         verbose_name = "Contact page"
@@ -80,14 +77,12 @@ class Contact(models.Model):
            
 class Message(models.Model):
     user                 = models.ForeignKey('Index', on_delete=models.CASCADE)
-    name                 = models.TextField(max_length=400)
-    email                = models.TextField(max_length=400)
-    phone_number         = models.CharField(max_length=100, blank=True)
+    name                 = models.CharField(max_length=100)
+    email                = models.EmailField(max_length=100)
+    phone_number         = models.CharField(max_length=15, blank=True)
     site_link            = models.CharField(max_length=500, blank=True)
     message              = models.TextField()
-    date                 = models.DateField(auto_now=True)
-    
-    
+    date                 = models.DateField(auto_now=True)        
     
     class Meta:
         verbose_name = "Others message"

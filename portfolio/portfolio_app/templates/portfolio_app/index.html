@@ -25,7 +25,7 @@
         <source src="/media/{{ person_detail.background_media }}" type="video/mp4">
       </video>
     {% else %}
-      <img src="/media/{{ person_detail.background_media }}" class="background_img" style="top:{{ person_detail.media_position_top }};left:{{ person_detail.media_position_left }};">
+      <img src="/media/{{ person_detail.background_media }}" class="background_img" style="top:{{ person_detail.media_position_top }};left:{{ person_detail.media_position_left }};position:fixed">
     {% endif %}
     <div class="masthead">
      <div class="masthead-bg" style="background-color:{{ person_detail.background_and_icon_color }}"></div>

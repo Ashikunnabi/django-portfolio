@@ -1,3 +1,4 @@
 001. Basic version done
 002. Extra codes removed
 003. Message model changes
+004. Contact form validation

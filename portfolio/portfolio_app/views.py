@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.core.validators import validate_email
 from django.shortcuts import render
 import random
 
@@ -101,6 +102,8 @@ def application(request):
 def message(request):
     person_detail   = Index.objects.get(user_status="Active")
     contact_page    = Contact.objects.get(user_id=person_detail.id)
+    message_successfull = None
+    not_message_successfull = None
     
     if request.method=="POST":
         name                 = request.POST.get('name')
@@ -108,16 +111,20 @@ def message(request):
         phone_number         = request.POST.get('phone')
         site_link            = request.POST.get('website')
         message              = request.POST.get('message')
-    
-        messaged = Message(
-            user                 = person_detail,
-            name                 = name,
-            email                = email,
-            phone_number         = phone_number,
-            site_link            = site_link,
-            message              = message
-        )
-        messaged.save()
+        try:
+            validate_email(value)
+            messaged = Message(
+                user                 = person_detail,
+                name                 = name,
+                email                = email,
+                phone_number         = phone_number,
+                site_link            = site_link,
+                message              = message
+            )
+            messaged.save()
+            message_successfull = True            
+        except:
+            not_message_successfull = True
     else:
         pass
         
@@ -125,11 +132,11 @@ def message(request):
         'person_detail'             : person_detail,
         'nav_active_contact'        : 'active',
         'contact_page'              : contact_page,
+        'message_successfull'       : message_successfull,
+        'not_message_successfull'   : not_message_successfull,
     }
     return render(request, "portfolio_app/contact.html", context)
-    
-    
-    
+  
     
     
     

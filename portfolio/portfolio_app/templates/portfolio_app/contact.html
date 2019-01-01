@@ -13,7 +13,18 @@
     
     {% block content %}  
     <div class="containers">  
+      
       <form id="contact" action="{% url 'contact' %}" method="post">
+      {% if message_successfull %}
+          <div class="alert alert-success">
+              <strong>Success!</strong> Thanks for connecting with me.
+           </div>
+      {% endif %}
+      {% if not_message_successfull %}
+          <div class="alert alert-danger">
+              <strong>Sorry!</strong> Invalid value submission.
+           </div>
+      {% endif %}
       {% csrf_token %}
         <h3>{{ contact_page.title }}</h3>
         <h4>{{ contact_page.sub_title }}</h4>

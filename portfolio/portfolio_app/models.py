@@ -78,17 +78,17 @@ class Contact(models.Model):
 class Message(models.Model):
     user                 = models.ForeignKey('Index', on_delete=models.CASCADE)
     name                 = models.CharField(max_length=100)
-    email                = models.EmailField(max_length=100)
+    email                = models.EmailField()
     phone_number         = models.CharField(max_length=15, blank=True)
     site_link            = models.CharField(max_length=500, blank=True)
     message              = models.TextField()
-    date                 = models.DateField(auto_now=True)        
+    date                 = models.DateField(auto_now_add=True)        
     
     class Meta:
         verbose_name = "Others message"
         
     def __str__(self):
-        return (self.name +" - "+ self.user.name)
+        return (self.name+" - "+str(self.date)+" - "+self.user.name)
     
     
     
